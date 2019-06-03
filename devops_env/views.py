@@ -1,4 +1,5 @@
 """
+    Construccion de  los  metodos HTTP para consumir el api REST
     File name: views.py
     Author: Angel Quingaluisa
     Date created: 03/06/2019

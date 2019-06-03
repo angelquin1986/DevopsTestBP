@@ -1,5 +1,11 @@
 
-
+"""
+    Validar los permisos de acceso al microservicio
+    File name: logica_negocio.py
+    Author: Angel Quingaluisa
+    Date created: 03/06/2019
+    Python Version: 3.6
+"""
 from rest_framework.permissions import BasePermission
 
 from devops_env import settings

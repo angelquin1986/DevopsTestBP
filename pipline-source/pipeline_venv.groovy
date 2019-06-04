@@ -2,14 +2,17 @@
 
 node {
     stage 'Checkout and Build'
-
+    //crear el entorno virtual
     createVirtualEnv 'env'
-    executeIn 'env', 'pip install -r requirements.txt'
-    executeIn 'env', './manage.py test'
-    //executeIn 'env', './manage.py integration-test'
 
-    virtualEnv('true')
-    runCmd('pip install -r requirements.txt')
+    //instalar las liberias necesarias y validar las faltantes
+    executeIn 'env', 'pip install -r requirements.txt'
+
+    //ejecutar test
+    executeIn 'env', './manage.py test'
+
+    //virtualEnv('true')
+    //runCmd('pip install -r requirements.txt')
 
 }
 

@@ -3,3 +3,4 @@ Django==2.1.1
 #libreria para  api rest
 djangorestframework
 django-rest-swagger
+gunicorn

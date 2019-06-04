@@ -1,4 +1,4 @@
-#Documentación  infraestructura
+# Documentación  infraestructura
 Se documenta todoos los comandos que se utiliza para  levantar el ambiente devops
 
 ## Instalar docker
@@ -25,3 +25,11 @@ sudo docker pull jenkins/jenkins
 
 #arrancar jekins
 sudo docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins
+# ver los  contenedores activos
+sudo docker ps -a
+# dar de baja un contenedor
+sudo docker rm dac335d87508
+# stop a un contenedor 
+sudo docker stop contenedor_id
+
+#jenkins user : admin  pasws_admin

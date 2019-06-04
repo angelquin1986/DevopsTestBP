@@ -9,7 +9,7 @@ node {
     executeIn 'env', 'pip install -r requirements.txt'
 
     //ejecutar test
-    executeIn 'env', './manage.py test'
+    executeIn 'env', ' python manage.py test'
 
     //virtualEnv('true')
     //runCmd('pip install -r requirements.txt')

@@ -33,3 +33,6 @@ sudo docker rm dac335d87508
 sudo docker stop contenedor_id
 
 #jenkins user : admin  pasws_admin
+
+#restaurar jenkins 
+systemctl restart jenkins

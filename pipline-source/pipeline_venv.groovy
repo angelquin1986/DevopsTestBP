@@ -8,6 +8,7 @@ node {
     //instalar las liberias necesarias y validar las faltantes
     executeIn 'env', 'pip install -r requirements.txt'
 
+    stage 'Test'
     //ejecutar test
     executeIn 'env', ' python manage.py test devops_env'
 

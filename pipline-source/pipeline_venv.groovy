@@ -32,7 +32,7 @@ def virtualEnv(String rebuild){
             sh "rm -rf ${env.VENV_PATH}"
             sh "echo 'rebuild is true'"
         }
-        sh returnStatus: true, script: "virtualenv ${env.VENV_PATH}"
+        sh returnStatus: true, script: "virtualenv -p python3 ${env.VENV_PATH}"
     }
 }
 

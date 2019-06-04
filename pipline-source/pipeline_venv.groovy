@@ -17,7 +17,7 @@ def createVirtualEnv(String name) {
 }
 
 def executeIn(String environment, String script) {
-    sh "source ${environment}/bin/activate && " + script
+    sh ". ${environment}/bin/activate && " + script
 }
 
 // alternative workaround

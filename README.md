@@ -14,7 +14,9 @@
         - Build
         - Test
         - Deploy(construye app en contenedores dockey y despliega con balanceo de carga en dos nodos (nginx)).    
-    
+
+### Google Cloud
+   -  Instancia VM  Ubuntu 18.04
 ### URL Jenkins
    - http://35.239.91.65:8080/
    - usuario: admin
@@ -51,3 +53,5 @@
 ### comando prueba con curl
 
 curl -X POST http://35.239.91.65:8000/Devops   -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "Content-Type: application/json" -d  '{ "message" : "This is a test", "to": "Juan Perez", "from": "Rita Asturia", "timeToLifeSec" : 45 }'
+
+https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/TestMicroServicio.png

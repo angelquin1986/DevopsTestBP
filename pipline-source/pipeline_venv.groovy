@@ -13,11 +13,15 @@ node {
     executeIn 'env', ' python manage.py test devops_env'
 
     stage 'Deploy'
+    sh '''
+        echo Eliminar contenedores anteriores...
+        if [ ! \"$(docker ps -q -f name=<name>)\" ]; then
+            docker rm -f devops-container
+        fi
+        echo Correr nuevo contenedor...
+        sh "docker-compose up -d"
 
-    sh "echo Eliminar contenedores anteriores..."
-    sh "if [ ! \"$(docker ps -q -f name=<name>)\" ]; then docker rm -f devops-container fi"
-    sh "echo Correr nuevo contenedor..."
-    sh "docker-compose up -d"
+    '''
 
     stage 'Publish results'
     slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"

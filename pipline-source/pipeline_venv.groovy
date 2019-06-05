@@ -14,8 +14,11 @@ node {
 
     stage 'Deploy'
 
-    sh ". ${environment}/bin/activate && " + "deploy.sh"
-    
+    sh "echo Eliminar contenedores anteriores..."
+    sh "docker rm -f $containerName"
+    sh "echo Correr nuevo contenedor..."
+    sh "docker-compose up -d"
+
     stage 'Publish results'
     slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
 

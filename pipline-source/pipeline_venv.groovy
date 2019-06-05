@@ -37,7 +37,7 @@ node {
 
 
     stage('Publish results'){
-         sh " echo Termino correctamente :)"
+         sh " echo 'Termino correctamente .)'"
     }
 
     //virtualEnv('true')

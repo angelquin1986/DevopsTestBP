@@ -9,7 +9,7 @@
  - gunicorn
  - Pycharm
 ![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/py.png)
-### Descripción
+### Descripción 
    - Aplicación alojada en google cloud, utiliza docker para  crear contenedores de la app y jenkins  para validar cambios en la rama y realizar CI/DI con pipeline   encargados de:
         - Checkout
         - Build

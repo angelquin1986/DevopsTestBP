@@ -15,7 +15,7 @@ node {
     stage 'Deploy'
     sh '''
         echo Eliminar contenedores anteriores...
-        if [ ! "$(docker ps -q -f name=devops-container)" ]; then
+        if [  "$(docker ps -q -f name=devops-container)" ]; then
             docker rm -f devops-container
         fi
         echo Correr nuevo contenedor...

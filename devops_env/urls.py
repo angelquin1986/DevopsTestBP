@@ -13,5 +13,5 @@ from devops_env import views
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    path('devops', views.leerMensaje),
+    path('Devops', views.leerMensaje),
 ]

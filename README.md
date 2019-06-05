@@ -14,13 +14,15 @@
         - Build
         - Test
         - Deploy(construye app en contenedores dockey y despliega con balanceo de carga en dos nodos (nginx)).    
+    
 ### URL Jenkins
    - http://35.239.91.65:8080/
    - usuario: admin
    - password admin
-
+   - Nombre pipLine en  Jenkins (PipeLineDevops) , se ejecuta cada 2 minutos
 ### URL APP MICROSERVICIO
    - http://35.239.91.65:8000/Devops
+   - ### NOTA: NO ES HTTPS
 ###Directorio codigo fuente microservio
     devops_env
 

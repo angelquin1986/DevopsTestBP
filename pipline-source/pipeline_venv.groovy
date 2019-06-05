@@ -1,35 +1,45 @@
 //author aquingaluisa copia del file  pipeline_venv_workarounds.groovy en github
 
 node {
-    stage 'Clean'
-     cleanWs()
-    stage 'Checkout'
-    checkout scm
-    stage 'Checkout and Build'
+    stage('Clean'){
+         cleanWs()
+    }
 
-    //crear el entorno virtual
-    createVirtualEnv 'env'
+    stage('Checkout'){
+        checkout scm
+    }
 
-    //instalar las liberias necesarias y validar las faltantes
-    executeIn 'env', 'pip install -r requirements.txt'
+    stage('Build'){
+        //crear el entorno virtual
+        createVirtualEnv 'env'
 
-    stage 'Test'
-    //ejecutar test
-    executeIn 'env', ' python manage.py test devops_env'
+        //instalar las liberias necesarias y validar las faltantes
+        executeIn 'env', 'pip install -r requirements.txt'
+    }
 
-    stage 'Deploy'
-    sh '''
-        echo Eliminar contenedores anteriores...
-        if [  "$(docker ps -q -f name=devops-container)" ]; then
-            docker rm -f devops-container
-        fi
-        echo Correr nuevo contenedor...
-        docker-compose up -d
+    stage('Test'){
+        //ejecutar test
+        executeIn 'env', ' python manage.py test devops_env'
+    }
 
-    '''
 
-    stage 'Publish results'
-    //slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
+    stage('Deploy'){
+        sh '''
+            echo Eliminar contenedores anteriores...
+            if [  "$(docker ps -q -f name=devops-container)" ]; then
+                docker rm -f devops-container
+            fi
+            echo Correr nuevo contenedor...
+            docker-compose up -d
+
+        '''
+    }
+
+
+    stage('Publish results'){
+           slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+        //slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
+    }
 
     //virtualEnv('true')
     //runCmd('pip install -r requirements.txt')

@@ -46,4 +46,4 @@ docker-compose --version
 
 
 # crear un imagen docker 
-docker-compose up
+docker-compose up -d --build

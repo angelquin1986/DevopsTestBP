@@ -37,10 +37,7 @@ node {
 
 
     stage('Publish results'){
-         slackSend channel: '#ops-room',
-                  color: 'good',
-                  message: "The pipeline ${currentBuild.fullDisplayName} termino correctamente."
-        //slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
+         sh " echo Termino correctamente :)"
     }
 
     //virtualEnv('true')

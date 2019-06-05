@@ -17,11 +17,14 @@
 
 ### Google Cloud
    -  Instancia VM  Ubuntu 18.04
+   
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/googleCloud.png)
 ### URL Jenkins
    - http://35.239.91.65:8080/
    - usuario: admin
    - password admin
    - Nombre pipLine en  Jenkins (PipeLineDevops) , se ejecuta cada 2 minutos
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/jenkins.png)   
 ### URL APP MICROSERVICIO
    - http://35.239.91.65:8000/Devops
    - ### NOTA: NO ES HTTPS
@@ -54,5 +57,4 @@
 
 curl -X POST http://35.239.91.65:8000/Devops   -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "Content-Type: application/json" -d  '{ "message" : "This is a test", "to": "Juan Perez", "from": "Rita Asturia", "timeToLifeSec" : 45 }'
 
-(https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/TestMicroServicio.png)
-(https://raw.githubusercontent.com/parzibyte/WaterPy/master/assets/ImagenV1.png)
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/TestMicroServicio.png)

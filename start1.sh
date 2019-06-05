@@ -5,4 +5,4 @@
 
 # Start Gunicorn processes
 echo Starting Gunicorn.
-exec gunicorn devops_env.wsgi:application --bind 0.0.0.0:8000 --workers 3
+exec gunicorn devops_env.wsgi:application --bind 0.0.0.0:8001 --workers 3

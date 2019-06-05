@@ -3,11 +3,21 @@
 
 #!/bin/bash
 imageName=devops-image:1.0
-containerName=devops-container
+
 
 
 echo Eliminar contenedores anteriores...
-docker rm -f $containerName
+if [  "$(docker ps -q -f name=devops-container1)" ]; then
+                docker rm -f devops-container1
+fi
+
+if [  "$(docker ps -q -f name=devops-container2)" ]; then
+                docker rm -f devops-container2
+fi
+
+if [  "$(docker ps -q -f name=devops-container)" ]; then
+                docker rm -f devops-container
+fi
 
 echo Correr nuevo contenedor...
-docker-compose up -d
+docker-compose up -d --build

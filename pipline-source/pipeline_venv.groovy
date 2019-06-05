@@ -26,24 +26,35 @@ node {
     stage('Deploy'){
         sh '''
             echo Eliminar contenedores anteriores...
-            if [  "$(docker ps -q -f name=devops-container)" ]; then
-                docker rm -f devops-container
+            if [  "$(docker ps -q -f name=devops-container1)" ]; then
+                            docker rm -f devops-container1
             fi
+
+            if [  "$(docker ps -q -f name=devops-container2)" ]; then
+                            docker rm -f devops-container2
+            fi
+
+            if [  "$(docker ps -q -f name=devops-container)" ]; then
+                            docker rm -f devops-container
+            fi
+
             echo Correr nuevo contenedor...
-            docker-compose up -d
+            docker-compose up -d --build
 
         '''
     }
 
 
     stage('Publish results'){
-         sh " echo 'Termino correctamente .)'"
+         sh " echo 'Termino correctamente :)'"
     }
 
     //virtualEnv('true')
     //runCmd('pip install -r requirements.txt')
 
 }
+
+
 
 // crear del ambiente virtual  con python 3
 def createVirtualEnv(String name) {

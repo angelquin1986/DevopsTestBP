@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8b291d-bb99-4635-a9e4-3c2821ed424b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestructura/comandos.md" beforeDir="false" afterPath="$PROJECT_DIR$/infraestructura/comandos.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipline-source/pipeline_venv.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/pipline-source/pipeline_venv.groovy" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="comandos.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comandos.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infraestructura/comandos.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
@@ -41,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pipeline_venv.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pipeline_venv.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pipline-source/pipeline_venv.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="240">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -124,8 +120,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>INSTALLED_APPS</find>
-      <find>returnStatus</find>
       <find>name</find>
+      <find>returnStatus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,7 +142,6 @@
         <option value="$PROJECT_DIR$/pipline-source/pipeline_venv_workarounds.groovy" />
         <option value="$PROJECT_DIR$/test/test_devops_mensaje.py" />
         <option value="$PROJECT_DIR$/devops_env/test.py" />
-        <option value="$PROJECT_DIR$/pipline-source/pipeline_venv.groovy" />
         <option value="$PROJECT_DIR$/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/infraestructura/comandos.md" />
         <option value="$PROJECT_DIR$/devops_env/logica_negocio.py" />
@@ -154,6 +149,7 @@
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/start.sh" />
+        <option value="$PROJECT_DIR$/pipline-source/pipeline_venv.groovy" />
       </list>
     </option>
   </component>
@@ -188,12 +184,12 @@
             <path>
               <item name="DevopsTestBP" type="b2602c69:ProjectViewProjectNode" />
               <item name="DevopsTestBP" type="462c0819:PsiDirectoryNode" />
-              <item name="devops_env" type="462c0819:PsiDirectoryNode" />
+              <item name="infraestructura" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DevopsTestBP" type="b2602c69:ProjectViewProjectNode" />
               <item name="DevopsTestBP" type="462c0819:PsiDirectoryNode" />
-              <item name="infraestructura" type="462c0819:PsiDirectoryNode" />
+              <item name="pipline-source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -568,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pipline-source/pipeline_venv.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -589,13 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -632,6 +614,20 @@
             <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="17" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipline-source/pipeline_venv.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>

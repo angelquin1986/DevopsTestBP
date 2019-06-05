@@ -36,3 +36,6 @@ sudo docker stop contenedor_id
 
 #restaurar jenkins 
 systemctl restart jenkins
+
+# crear un imagen docker 
+docker-compose up

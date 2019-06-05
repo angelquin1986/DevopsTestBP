@@ -1,0 +1,13 @@
+#author angel quingaluisa
+# archivo configuracion docker compose para generar un contenedor con el proyecto microservicios
+version: '3'
+services:
+  web:
+    image: devops-image:1.0
+    container_name: devops-container
+    build: .
+    command: sh start.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"

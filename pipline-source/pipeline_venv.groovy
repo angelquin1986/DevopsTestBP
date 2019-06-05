@@ -18,7 +18,7 @@ node {
         if [  "$(docker ps -q -f name=devops-container)" ]; then
             docker rm -f devops-container
         fi
-        echo Correr nuevo contenedor...
+        echo Correr nuevo contenedor....
         docker-compose up -d
 
     '''

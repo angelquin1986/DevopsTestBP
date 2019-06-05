@@ -15,7 +15,7 @@ node {
     stage 'Deploy'
 
     sh "echo Eliminar contenedores anteriores..."
-    sh "docker rm -f devops-container"
+    sh "if [ ! "$(docker ps -q -f name=<name>)" ]; then docker rm -f devops-container fi"
     sh "echo Correr nuevo contenedor..."
     sh "docker-compose up -d"
 

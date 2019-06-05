@@ -1,8 +1,12 @@
 //author aquingaluisa copia del file  pipeline_venv_workarounds.groovy en github
 
 node {
+    stage 'Clean'
+     cleanWs()
+    stage 'Checkout'
+    checkout scm
     stage 'Checkout and Build'
-    cleanWs()
+
     //crear el entorno virtual
     createVirtualEnv 'env'
 

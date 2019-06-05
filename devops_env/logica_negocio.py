@@ -14,6 +14,6 @@ def leerMensaje(mensaje):
         # mensaje.get('to')
         # mensaje.get('from')
         # mensaje.get('timeToLifeSec')
-        return 'Hello ' + str(mensaje.get('to')) + ' your message will be send.'
+        return 'Hello dos' + str(mensaje.get('to')) + ' your message will be send.'
     except Exception as  ex:
         raise ex

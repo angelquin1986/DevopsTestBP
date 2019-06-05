@@ -19,7 +19,7 @@ node {
             docker rm -f devops-container
         fi
         echo Correr nuevo contenedor...
-        sh "docker-compose up -d"
+        docker-compose up -d
 
     '''
 

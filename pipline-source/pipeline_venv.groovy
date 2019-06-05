@@ -2,6 +2,7 @@
 
 node {
     stage 'Checkout and Build'
+    cleanWs()
     //crear el entorno virtual
     createVirtualEnv 'env'
 

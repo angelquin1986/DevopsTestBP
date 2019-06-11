@@ -6,7 +6,6 @@ jobs:
       - image: circleci/python:3.6.4
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
     steps:
       - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
@@ -34,7 +33,8 @@ jobs:
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
             gcloud --quiet config set project devops-242622
             gcloud --quiet config set compute/zone asia-east1
-            gcloud -q app deploy /home/app.yaml
+            gcloud -q app deploy
+          machine: true
 workflows:
   version: 2
   build/deploy:

@@ -26,7 +26,6 @@ jobs:
           path: test-results
           destination: tr1
   deploy:
-    working_directory: ~/DevopsTestBP
     docker:
       - image: google/cloud-sdk
     steps:

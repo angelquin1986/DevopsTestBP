@@ -27,7 +27,7 @@ jobs:
           command: |
             docker-compose up -d --build
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            docker push $IMAGE_NAME:$TAG
+            docker push $DOCKER_LOGIN/$IMAGE_NAME:$TAG
       - store_test_results:
           path: test-results
       - store_artifacts:

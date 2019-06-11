@@ -18,6 +18,14 @@ jobs:
       - run:
           command: |
             pipenv run "python manage.py test"
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Build and push Docker image
+          command: |
+            docker-compose up -d --build
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push $DOCKER_LOGIN/devops-image:1.0
       - store_test_results:
           path: test-results
       - store_artifacts:

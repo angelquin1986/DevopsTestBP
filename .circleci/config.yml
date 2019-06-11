@@ -35,6 +35,7 @@ jobs:
             gcloud --quiet config set project devops-242622
             gcloud --quiet config set compute/zone asia-east1
             gcloud -q app deploy
+workflows:
   version: 2
   build/deploy:
     jobs:

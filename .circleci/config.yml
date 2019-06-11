@@ -13,6 +13,8 @@ jobs:
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run:
           command: |
+            echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+            echo 'export IMAGE_NAME=devops-image' >> $BASH_ENV 
             sudo pip install pipenv
             pipenv install
       - run:
@@ -25,7 +27,7 @@ jobs:
           command: |
             docker-compose up -d --build
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            docker push $DOCKER_LOGIN/devops-image:1.0
+            docker push $DOCKER_LOGIN/$IMAGE_NAME:$TAG
       - store_test_results:
           path: test-results
       - store_artifacts:

@@ -27,14 +27,16 @@ jobs:
     docker:
       - image: google/cloud-sdk
     steps:
+      - checkout:
+          path: ~/DevopsTestBP
+
       - run:
-          working_directory: ~/DevopsTestBP
           command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
             gcloud --quiet config set project devops-242622
             gcloud --quiet config set compute/zone asia-east1
             gcloud -q app deploy
-          machine: true
+
 workflows:
   version: 2
   build/deploy:

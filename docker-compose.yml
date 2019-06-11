@@ -3,7 +3,7 @@
 version: '3'
 services:
   web1:
-    image: devops-image
+    image: devops-image:1.0
     container_name: devops-container1
     build: .
     command: sh start1.sh
@@ -13,7 +13,7 @@ services:
       - "8001:8001"
 
   web2:
-    image: devops-image
+    image: devops-image:1.0
     container_name: devops-container2
     build: .
     command: sh start1.sh
@@ -22,6 +22,7 @@ services:
     ports:
       - "8002:8002"
   proxy:
+      image: nginx-image:1.0
       build:
         context:  ./nginx
         dockerfile: Dockerfile

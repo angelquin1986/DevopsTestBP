@@ -1,6 +1,6 @@
 runtime: python
 
-entrypoint: gunicorn -b :$PORT devops_env.wsgi
+entrypoint: gunicorn -b 8003 devops_env.wsgi
 
 env: flex # for Google Cloud Flexible App Engine
 

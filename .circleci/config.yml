@@ -31,8 +31,7 @@ jobs:
       - image: google/cloud-sdk
     steps:
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 --decode -i > gcloud-key-file.json
-          echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=gcloud-key-file.json
+          echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file gcloud-key-file.json
           gcloud --quiet config set project devops-242622
           gcloud --quiet config set compute/zone asia-east1
 workflows:

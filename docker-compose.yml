@@ -11,3 +11,21 @@ services:
       - .:/code
     ports:
       - "8001:8001"
+web2:
+    image: devops-image:1.0
+    container_name: devops-container2
+    build: .
+    command: sh start1.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8002:8002"
+  proxy:
+      build:
+        context:  ./nginx
+        dockerfile: Dockerfile
+      ports:
+        - "8000:8000"
+      links:
+          - web1:web1
+          - web2:web2 

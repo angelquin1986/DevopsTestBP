@@ -25,10 +25,13 @@ jobs:
       - run:
           name: Build and push Docker image
           command: |
-            docker-compose up -d --build
-            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin docker.io
-            docker push $DOCKER_LOGIN/devops-image:1.0
-      - store_test_results:
+#            docker-compose up -d --build
+#            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin docker.io
+#            docker push $DOCKER_LOGIN/devops-image:1.0
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=gcloud-key-file.json
+            gcloud --quiet config set project devops-242622
+            gcloud --quiet config set compute/zone asia-east1
+        - store_test_results:
           path: test-results
       - store_artifacts:
           path: test-results

@@ -39,6 +39,6 @@ workflows:
     jobs:
       - build
       - deploy
-          requieres:
+          requires:
             - build
 

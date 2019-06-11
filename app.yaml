@@ -1,13 +1,7 @@
 runtime: python
-
-entrypoint: gunicorn -b 8003 devops_env.wsgi
-
 env: flex # for Google Cloud Flexible App Engine
+entrypoint: gunicorn -b $PORT devops_env.wsgi
 
-env_variables:
-# the secret key used for the Django app (from PROJECT-DIRECTORY/settings.py)
-  SECRET_KEY: 'DJANGO-SECRET-KEY'
-  DEBUG: 'False' # always False for deployment
 
 runtime_config:
   python_version: 3

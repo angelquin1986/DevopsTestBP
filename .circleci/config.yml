@@ -33,7 +33,7 @@ jobs:
       - run:
           command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file gcloud-key-file.json
-            gcloud --quiet config set project devops-242622
+            gcloud --quiet config set project Devops
             gcloud --quiet config set compute/zone asia-east1
             gcloud -q app deploy
 

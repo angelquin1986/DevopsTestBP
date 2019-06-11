@@ -22,6 +22,7 @@ services:
     ports:
       - "8002:8002"
   proxy:
+      image: nginx-image:1.0
       build:
         context:  ./nginx
         dockerfile: Dockerfile

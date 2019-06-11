@@ -59,3 +59,28 @@
 curl -X POST http://35.239.91.65:8000/Devops   -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "Content-Type: application/json" -d  '{ "message" : "This is a test", "to": "Juan Perez", "from": "Rita Asturia", "timeToLifeSec" : 45 }'
 
 ![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/TestMicroServicio.png)
+
+-----------------------------------------------------------------------------
+### ACTUALIZACION
+Para la modificac{on de esta app se utilizo:
+CircleCI.- en el proyecto se encuentra la configuracion del pipline (.circleci/config.yml)
+	Este  valida :
+	-Librerias utilizadas por la app del microservicio
+	-Ejecuta los test del proyecto 
+	-Deploya en proyecto en APP Engine cuenta aquingaluisa (gcloud-key-file.json) medianto una imagen doker que contiene el SDK de google.
+
+NOTA: SI necesitan la cuenta de circleCI pedirme por whatapp ya que es la misma de mi githun y mi correo personal.
+
+APP ENGINE se utiliza cuentas de servicio para poder logearse a goole cloud desde CircleCI y deployar la  app.
+
+Se crea los Tests para validar los status de las peticiones HTTP en 200 y en 403 (devops_env/test.py)
+
+
+El codigo se actualiza en el repositorio GIT https://github.com/angelquin1986/DevopsTestBP
+
+
+NOTA: no pude utizar  molecular por cuestion de tiempo para la investigacion, CircleCI si deploya en APP ENGINE pero al momento del probar el microservicio, da un error de gateway de gninx.
+
+
+Faltantes: Molecular y validar porque no respode en APIREST de APP ENGINE , se prueba localmente  y el microservicio si funciona.
+

@@ -31,11 +31,11 @@ jobs:
       - image: google/cloud-sdk
     steps:
       - run: |
-          ls -l
+
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
           gcloud --quiet config set project devops-242622
           gcloud --quiet config set compute/zone asia-east1
-          gcloud -q app deploy app.yaml
+          gcloud -q app deploy ~/DevopsTestBP/app.yaml
 workflows:
   version: 2
   build/deploy:

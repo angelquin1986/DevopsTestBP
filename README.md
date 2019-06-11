@@ -84,3 +84,7 @@ NOTA: no pude utizar  molecular por cuestion de tiempo para la investigacion, Ci
 
 Faltantes: Molecular y validar porque no respode en APIREST de APP ENGINE , se prueba localmente  y el microservicio si funciona.
 
+
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/circleCI.png)
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/circleCI2.png)
+![alt text](https://raw.githubusercontent.com/angelquin1986/DevopsTestBP/master/assert/circleCI3.png)

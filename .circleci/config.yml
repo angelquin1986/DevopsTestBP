@@ -6,20 +6,24 @@ jobs:
       - image: circleci/python:3.6.4
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
     steps:
       - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run:
           command: |
-            echo 'export TAG=1.0' >> $BASH_ENV
-            echo 'export IMAGE_NAME=devops-image' >> $BASH_ENV 
             sudo pip install pipenv
             pipenv install
       - run:
           command: |
             pipenv run "python manage.py test"
+      - run:
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+            gcloud --quiet config set project devops-242622
+            gcloud --quiet config set compute/zone asia-east1
+            gcloud -q app deploy ~/DevopsTestBP/app.yaml
+
       - store_test_results:
           path: test-results
       - store_artifacts:
@@ -31,7 +35,6 @@ jobs:
       - image: google/cloud-sdk
     steps:
       - run: |
-
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
           gcloud --quiet config set project devops-242622
           gcloud --quiet config set compute/zone asia-east1

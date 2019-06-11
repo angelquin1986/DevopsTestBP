@@ -64,10 +64,10 @@ curl -X POST http://35.239.91.65:8000/Devops   -H "X-Parse-REST-API-Key: 2f5ae96
 ### ACTUALIZACION
 Para la modificac{on de esta app se utilizo:
 CircleCI.- en el proyecto se encuentra la configuracion del pipline (.circleci/config.yml)
-	Este  valida :
-	-Librerias utilizadas por la app del microservicio
-	-Ejecuta los test del proyecto 
-	-Deploya en proyecto en APP Engine cuenta aquingaluisa (gcloud-key-file.json) medianto una imagen doker que contiene el SDK de google.
+Este  valida :
+- Librerias utilizadas por la app del microservicio
+- Ejecuta los test del proyecto 
+- Deploya en proyecto en APP Engine cuenta aquingaluisa (gcloud-key-file.json) medianto una imagen doker que contiene el SDK de google.
 
 NOTA: SI necesitan la cuenta de circleCI pedirme por whatapp ya que es la misma de mi githun y mi correo personal.
 

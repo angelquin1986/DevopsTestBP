@@ -3,7 +3,7 @@
 version: '3'
 services:
   web1:
-    image: devops-image:1.0
+    image: devops-image
     container_name: devops-container1
     build: .
     command: sh start1.sh
@@ -13,7 +13,7 @@ services:
       - "8001:8001"
 
   web2:
-    image: devops-image:1.0
+    image: devops-image
     container_name: devops-container2
     build: .
     command: sh start1.sh
